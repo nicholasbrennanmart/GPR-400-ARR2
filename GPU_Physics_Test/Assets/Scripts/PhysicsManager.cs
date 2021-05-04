@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PhysicsManager : MonoBehaviour
 {
+    //circle struct
     struct circleCollider
     {
         public Vector2 position;
@@ -48,6 +49,7 @@ public class PhysicsManager : MonoBehaviour
         UpdateGameObjects();
     }
 
+    //create shader
     void InitShader()
     {
         handleCollisionsKernel = physicsShader.FindKernel("handleCollisions");
@@ -63,6 +65,7 @@ public class PhysicsManager : MonoBehaviour
         physicsShader.SetBuffer(updatePhysicsKernel, "circleBuffer", circleListBuffer);
     }
 
+    //update compute shader
     void ShaderTick()
     {
         physicsShader.SetFloat("deltaTime", Time.deltaTime);
@@ -73,6 +76,7 @@ public class PhysicsManager : MonoBehaviour
         circleListBuffer.GetData(circleList);
     }
 
+    //create circles
     void InitCircles()
     {
         circleList = new circleCollider[numCircles];
@@ -93,6 +97,7 @@ public class PhysicsManager : MonoBehaviour
 
     }
 
+    //update gameobjects
     void UpdateGameObjects()
     {
         for (int i = 0; i < numCircles; i++)

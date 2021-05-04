@@ -1,5 +1,6 @@
 ﻿// Each #kernel tells which function to compile; you can have many kernels
 
+//circle struct
 struct circleCollider {
     float2 position;
     float radius;
@@ -15,11 +16,13 @@ float deltaTime;
 int floatToInt;
 float intToFloat;
 
+//projection equation
 float2 project(float2 vec, float2 ontoVec)
 {
     return ontoVec * (dot(vec, ontoVec) / dot(ontoVec, ontoVec));
 }
 
+//handle chollision kernal
 #pragma kernel handleCollisions
 [numthreads(8,8,1)]
 void handleCollisions(uint3 id : SV_DispatchThreadID)
@@ -62,6 +65,7 @@ void handleCollisions(uint3 id : SV_DispatchThreadID)
     }
 }
 
+//update phsyics kernel
 #pragma kernel updatePhysics
 [numthreads(8,1,1)]
 void updatePhysics(uint3 id: SV_DispatchThreadID)
