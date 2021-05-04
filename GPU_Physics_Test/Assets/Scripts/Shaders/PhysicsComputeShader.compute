@@ -1,0 +1,78 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+
+struct circleCollider {
+    float2 position;
+    float radius;
+    float2 velocity;
+    float mass;
+    int2 dummy; 
+};
+
+RWStructuredBuffer<circleCollider> circleBuffer;
+
+float deltaTime;
+
+int floatToInt;
+float intToFloat;
+
+float2 project(float2 vec, float2 ontoVec)
+{
+    return ontoVec * (dot(vec, ontoVec) / dot(ontoVec, ontoVec));
+}
+
+#pragma kernel handleCollisions
+[numthreads(8,8,1)]
+void handleCollisions(uint3 id : SV_DispatchThreadID)
+{
+    /*float2 xVel = (float2)(circleBuffer[id.x].velocity * intToFloat);
+    float2 yVel = (float2)(circleBuffer[id.y].velocity * intToFloat);*/
+
+    float2 xVel = circleBuffer[id.x].velocity;
+    float2 yVel = circleBuffer[id.y].velocity;
+
+    float2 collisionAxis = circleBuffer[id.x].position - circleBuffer[id.y].position;
+    if (id.y < id.x
+        && length(collisionAxis) <= circleBuffer[id.x].radius + circleBuffer[id.y].radius)
+        //&& (dot(xVel, collisionAxis) < 0.0f || dot(yVel, collisionAxis) > 0.0f))
+    {
+        float2 xProjVel = xVel == float2(0.0f, 0.0f) ? float2(0.0f, 0.0f) : project(xVel, collisionAxis);
+
+        float2 remainingXVel = circleBuffer[id.x].velocity - xProjVel; // keep the vector component that doesn't have anything to do with the collision
+
+        float2 yProjVel = yVel == float2(0.0f, 0.0f) ? float2(0.0f, 0.0f) : project(yVel, collisionAxis);
+
+        float2 remainingYVel = circleBuffer[id.y].velocity - yProjVel;
+
+        float2 newVelocityColliderX = xProjVel * (circleBuffer[id.x].mass - circleBuffer[id.y].mass) / (circleBuffer[id.x].mass + circleBuffer[id.y].mass)
+            + yProjVel * 2.0f * circleBuffer[id.y].mass / (circleBuffer[id.x].mass + circleBuffer[id.y].mass);
+
+        float2 newVelocityColliderY = yProjVel * (circleBuffer[id.y].mass - circleBuffer[id.x].mass) / (circleBuffer[id.x].mass + circleBuffer[id.y].mass)
+            + xProjVel * 2.0f * circleBuffer[id.x].mass / (circleBuffer[id.x].mass + circleBuffer[id.y].mass);
+
+        float2 newXVel = remainingXVel + newVelocityColliderX;
+        float2 newYVel = remainingYVel + newVelocityColliderY;
+
+        //this is dangerous - careful!
+        /*InterlockedAdd(circleBuffer[id.x].velocity, (int)(floatToInt * (newXVel - xVel)));
+        InterlockedAdd(circleBuffer[id.y].velocity, (int)(floatToInt * (newYVel - yVel)));*/
+
+        //this is even more dangerous! won't anyone think of the children?
+        circleBuffer[id.x].velocity = newXVel;
+        circleBuffer[id.y].velocity = newYVel;
+    }
+}
+
+#pragma kernel updatePhysics
+[numthreads(8,1,1)]
+void updatePhysics(uint3 id: SV_DispatchThreadID)
+{
+    //update velocity
+    //circleBuffer[id.x].velocity = circleBuffer[id.x].velocity + (circleBuffer[id.x].appliedForce / circleBuffer[id.x].mass) * deltaTime;
+
+    //update position
+    circleBuffer[id.x].position = circleBuffer[id.x].position + circleBuffer[id.x].velocity * deltaTime;
+    
+    ////reset appliedForce
+    //circleBuffer[id.x].appliedForce = float2(0.0f, 0.0f);
+}
+

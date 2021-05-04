@@ -1,0 +1,72 @@
+Base path: 'C:/Program Files/Unity/Hub/Editor/2019.4.21f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.4.21f1/Editor/Data/PlaybackEngines'
+Cmd: initializeCompiler
+Cmd: compileSnippet
+  api=4 type=0 insize=731 outsize=858 kw=ETC1_EXTERNAL_ALPHA pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: preprocessCompute
+  insize=439 outsize=440 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at (0): Did not find shader kernel 'handleConllisions' to compile
+  api=4 insize=440 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=2866 outsize=2867 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at PhysicsComputeShader.compute(32): invalid subscript 'length'
+  api=4 insize=2867 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=2934 outsize=2935 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at PhysicsComputeShader.compute(35): invalid subscript 'length'
+  api=4 insize=2935 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=3108 outsize=3109 ok=1
+Cmd: preprocessCompute
+  insize=3109 outsize=3110 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at PhysicsComputeShader.compute(36): syntax error: unexpected token ')'
+  error: 2 plat 4 at PhysicsComputeShader.compute(40): undeclared identifier 'xProjVel'
+  api=4 insize=3110 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=3108 outsize=3109 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at PhysicsComputeShader.compute(46): implicit truncation of vector type
+  error: 1 plat 4 at PhysicsComputeShader.compute(49): implicit truncation of vector type
+  error: 1 plat 4 at PhysicsComputeShader.compute(52): implicit truncation of vector type
+  error: 1 plat 4 at PhysicsComputeShader.compute(53): implicit truncation of vector type
+  error: 2 plat 4 at PhysicsComputeShader.compute(70): invalid subscript 'appliedForce'
+  api=4 insize=3109 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=3110 outsize=3111 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at PhysicsComputeShader.compute(46): implicit truncation of vector type
+  error: 1 plat 4 at PhysicsComputeShader.compute(49): implicit truncation of vector type
+  error: 2 plat 4 at PhysicsComputeShader.compute(70): invalid subscript 'appliedForce'
+  api=4 insize=3111 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=3112 outsize=3113 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at PhysicsComputeShader.compute(70): invalid subscript 'appliedForce'
+  api=4 insize=3113 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=3015 outsize=3016 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=3016 outsize=1725 ok=1
+Cmd: preprocessCompute
+  insize=3018 outsize=3019 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=3019 outsize=1613 ok=1
+Cmd: preprocessCompute
+  insize=3118 outsize=3119 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=3119 outsize=1773 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=16577 outsize=5382 kw=_SUNDISK_NONE pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=16577 outsize=442 kw=_SUNDISK_NONE pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=16577 outsize=5666 kw=_SUNDISK_SIMPLE pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=16577 outsize=902 kw=_SUNDISK_SIMPLE pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=2984 outsize=1306 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=2984 outsize=470 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1

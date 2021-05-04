@@ -1,0 +1,14 @@
+Base path: 'C:/Program Files/Unity/Hub/Editor/2019.4.21f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.4.21f1/Editor/Data/PlaybackEngines'
+Cmd: initializeCompiler
+Cmd: compileComputeKernel
+  api=4 insize=440 outsize=231 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at PhysicsComputeShader.compute(35): invalid subscript 'length'
+  api=4 insize=3109 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 1 plat 4 at PhysicsComputeShader.compute(46): implicit truncation of vector type
+  error: 1 plat 4 at PhysicsComputeShader.compute(49): implicit truncation of vector type
+  error: 1 plat 4 at PhysicsComputeShader.compute(52): implicit truncation of vector type
+  error: 1 plat 4 at PhysicsComputeShader.compute(53): implicit truncation of vector type
+  error: 2 plat 4 at PhysicsComputeShader.compute(70): invalid subscript 'appliedForce'
+  api=4 insize=3109 outsize=0 ok=0
